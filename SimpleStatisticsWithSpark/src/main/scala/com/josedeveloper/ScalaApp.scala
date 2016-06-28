@@ -27,10 +27,10 @@ object ScalaApp extends App {
   //Map to Padron objects
   val dataMapped = data.map(line => (line(1), new Padron(line(0), line(1),
     line(2), line(3), line(4), line(5),
-    getIntValue(line(6)),
-    getIntValue(line(7)),
     getIntValue(line(8)),
-    getIntValue(line(9)))))
+    getIntValue(line(9)),
+    getIntValue(line(10)),
+    getIntValue(line(11)))))
 
   //Groupped by district
   val grouppedData = dataMapped.reduceByKey((x: Padron, y: Padron) => new Padron(x.codDistrito, x.descDistrito,
